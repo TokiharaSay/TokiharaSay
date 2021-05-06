@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="运行macOS MSI-B360M-MORTAR">
+  <meta name="description" content="">
   <meta name="author" content="常原">
   <meta name="keywords" content="">
   
-  <title>记一次微星-B360M-迫击炮黑苹果完善程度 - 常原的部落阁</title>
+  <title>微星 B360M迫击炮 黑苹果 OpenCore 引导配置 - 常原的部落阁</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="记一次微星-B360M-迫击炮黑苹果完善程度">
+            <span class="h2" id="subtitle" title="微星 B360M迫击炮 黑苹果 OpenCore 引导配置">
               
             </span>
 
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      696 字
+      1.6k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      25
        分钟
     </span>
   
@@ -225,127 +225,239 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">记一次微星-B360M-迫击炮黑苹果完善程度</h1>
+            <h1 style="display: none">微星 B360M迫击炮 黑苹果 OpenCore 引导配置</h1>
             
               <p class="note note-info">
                 
-                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年4月23日 中午
+                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年5月6日 上午
                 
               </p>
             
             <div class="markdown-body">
-              <p>运行macOS MSI-B360M-MORTAR</p>
-<span id="more"></span>
-<ul>
-<li>若要引用或转载本EFI，请务必注明出处，所有内容仅供个人使用和学习参考，严禁用于商业用途（tb奸商先死ma）</li>
-</ul>
-<table>
+              <div align="center">
+<img src="https://cdn.jsdelivr.net/gh/TokiharaSay/Pic/Hackintosh/MSI-B360M-MORTAR-Hackintosh.jpg" srcset="/img/loading.gif" lazyload width="350px">
+</div>
+
+<h1 align="center">MSI-B360M-MORTAR-Hackintosh</h1>
+<h3 align="center">微星 B360M迫击炮 黑苹果 OpenCore 引导配置</h3>
+<br>
+
+<h2 id="Disclaimer-免责声明"><a href="#Disclaimer-免责声明" class="headerlink" title="Disclaimer / 免责声明"></a>Disclaimer / 免责声明</h2><p>Your warranty is now void. Please do some research if you have any concerns before utilizing my project. I am not responsible for any loss, including but not limited to Kernel Panic, device fail to boot or can not function normally, storage damage or data loss, atomic bombing, World War III, The CK-Class Restructuring Scenario that SCP Foundation can not prevent, and so on.</p>
+<p>你的保修将完全失效。如果您有任何疑虑，请在使用我的项目之前先进行一些研究。我对任何损失均不负责，包括但不限于 Kernel Panic、设备无法启动或无法正常工作、硬件损坏或数据丢失、原子弹爆炸、第三次世界大战、SCP 基金会无法避免的 CK 级现实重构等。</p>
+<p>Please choose the branch you need for different graphics cards</p>
+<p>不同显卡请选择你需要的分支</p>
+<h2 id="Hardware-Specifications-硬件配置"><a href="#Hardware-Specifications-硬件配置" class="headerlink" title="Hardware Specifications / 硬件配置"></a>Hardware Specifications / 硬件配置</h2><table>
 <thead>
 <tr>
-<th align="left">支持macOS版本</th>
-<th>10.14.6-11.2</th>
+<th align="left">Specifications</th>
+<th align="left">Details</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">引导加载程序</td>
-<td>OpenCore 0.6.7</td>
+<td align="left">Computer Model</td>
+<td align="left">MSI-B360M-MORTAR</td>
 </tr>
 <tr>
-<td align="left">CPU平台</td>
-<td>Coffee Lake（i5-8400）</td>
-</tr>
-</tbody></table>
-<h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/TokiharaSay/MSI-B360M-MORTAR-Hackintosh">https://github.com/TokiharaSay/MSI-B360M-MORTAR-Hackintosh</a></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">系统配置</th>
-<th align="center"></th>
-<th align="center">注意事项</th>
-</tr>
-</thead>
-<tbody><tr>
 <td align="left">CPU</td>
-<td align="center">i5-8400</td>
-<td align="center">XCPM工作，但不确定CPU调度是否正确</td>
+<td align="left">Intel Core i5-8400</td>
 </tr>
 <tr>
-<td align="left">显卡</td>
-<td align="center">Intel UHD630/GTX980Ti</td>
-<td align="center">使用两根DP线解决WIN/MAC 切换系统显卡使用问题</td>
+<td align="left">Memory</td>
+<td align="left">DDR4 2666 Mhz. 8 GB</td>
 </tr>
 <tr>
-<td align="left">BIOS</td>
-<td align="center">7B23v1B</td>
-<td align="center">解锁CFG锁</td>
+<td align="left">NVMe SSD</td>
+<td align="left">SAMSUNG 970 EVO 250G</td>
 </tr>
 <tr>
-<td align="left">声音</td>
-<td align="center">Realtek ALC892</td>
-<td align="center">板载音频</td>
+<td align="left">Integrated Graphics</td>
+<td align="left">Intel UHD Graphics 630</td>
 </tr>
 <tr>
-<td align="left">硬盘</td>
-<td align="center">三星970 Evo 250G</td>
-<td align="center">第一个NVME插槽</td>
-</tr>
-<tr>
-<td align="left">显示器</td>
-<td align="center">3840x2160 15.6’</td>
-<td align="center">通过DP连接</td>
+<td align="left">Wireless Card</td>
+<td align="left">Manually  to PCIE Card BCM943602CDP</td>
 </tr>
 </tbody></table>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
-<li><strong>未找到</strong></li>
+<h2 id="Working-amp-Not-Working-可用与不可用的功能"><a href="#Working-amp-Not-Working-可用与不可用的功能" class="headerlink" title="Working &amp; Not Working / 可用与不可用的功能"></a>Working &amp; Not Working / 可用与不可用的功能</h2><h3 id="Non-Fuctional-不工作"><a href="#Non-Fuctional-不工作" class="headerlink" title="Non-Fuctional / 不工作"></a>Non-Fuctional / 不工作</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Dependency</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Non-Fuctional<br>没有不工作</td>
+<td>✅</td>
+<td></td>
+<td>Completely normal<br>完全正常</td>
+</tr>
+</tbody></table>
+<h3 id="Video-and-Audio-音频与视频"><a href="#Video-and-Audio-音频与视频" class="headerlink" title="Video and Audio / 音频与视频"></a>Video and Audio / 音频与视频</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Dependency</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Full Graphics Accleration (QE/CI)<br>图形硬件加速</td>
+<td>✅</td>
+<td><code>WhateverGreen.kext</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Audio Recording via 3.5mm microphone<br>通过3.5mm 麦克风录音</td>
+<td>✅</td>
+<td><code>AppleALC.kext</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Audio Playback after through 3.5mm<br>通过 后 3.5mm 接口播放音频</td>
+<td>✅</td>
+<td><code>AppleALC.kext</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Automatic Headphone Output Switching<br>当插入耳机时自动切换音频输出</td>
+<td>✅</td>
+<td><code>AppleALC.kext</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Power-Charge-Sleep-and-Hibernation-电源管理、充电、睡眠、休眠"><a href="#Power-Charge-Sleep-and-Hibernation-电源管理、充电、睡眠、休眠" class="headerlink" title="Power, Charge, Sleep and Hibernation / 电源管理、充电、睡眠、休眠"></a>Power, Charge, Sleep and Hibernation / 电源管理、充电、睡眠、休眠</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Dependency</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU Power Management (SpeedShift)<br>CPU 电源管理</td>
+<td>✅</td>
+<td><code>SSDT-PLUG</code></td>
+<td>Use <code>Macmini8,1</code> for beter power management<br>使用 <code>Macmini8,1</code> 机型以获得更好的电源管理</td>
+</tr>
+<tr>
+<td>NVMe Drive Battery Management<br>NVMe 硬盘电源管理</td>
+<td>✅</td>
+<td><code>NVMeFix.kext</code></td>
+<td></td>
+</tr>
+<tr>
+<td>S3 Sleep / Hibernation Mode 3<br>S3 睡眠 / Mode 3 休眠</td>
+<td>✅</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Dependency</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WiFi</td>
+<td>✅</td>
+<td><code>AirportFixup.kext</code></td>
+<td>Suggest to switch Broadcom based card<br>推荐更换博通无线网卡</td>
+</tr>
+<tr>
+<td>USB 2.0, USB 3.0</td>
+<td>✅</td>
+<td><code>USBPorts.kext</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="Display-TrackPad-and-Keyboard-显示器、触摸板和键盘"><a href="#Display-TrackPad-and-Keyboard-显示器、触摸板和键盘" class="headerlink" title="Display, TrackPad and Keyboard / 显示器、触摸板和键盘"></a>Display, TrackPad and Keyboard / 显示器、触摸板和键盘</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+<th>Dependency</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HiDPI</td>
+<td>✅</td>
+<td></td>
+<td>Natively enabled on UHD DP  screen external<br>在 UHD DP 4K 外接屏幕上原生启用</td>
+</tr>
+</tbody></table>
+<h2 id="Refrence-必读参考资料"><a href="#Refrence-必读参考资料" class="headerlink" title="Refrence / 必读参考资料"></a>Refrence / 必读参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Install-Guide/">dortania’s OpenCore Install Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/">dortania’s OpenCore Post Install Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/">dortania Getting Started with ACPI</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/dortania/OpenCore-Multiboot">dortania opencore multiboot</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md">WhateverGreen Intel HD Manual</a></li>
+<li><code>Configuration.pdf</code> and <code>Differences.pdf</code> in each OpenCore releases.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/daliansky/OC-little">daliansky/OC-little</a></li>
+<li><a target="_blank" rel="noopener" href="https://oc.skk.moe/">OpenCore 简体中文参考手册 (非官方)</a></li>
 </ul>
-<p>感谢OC技术交流群 百科哞帮助修改AppleALC，将前面板耳机与后面板扬声器分开</p>
-<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ul>
-<li><p>BIOS设置</p>
+<p><strong>No seriously, PLEASE read those.</strong></p>
+<p><strong>务必阅读上述参考资料</strong></p>
+<h2 id="Requirement-需求和依赖"><a href="#Requirement-需求和依赖" class="headerlink" title="Requirement / 需求和依赖"></a>Requirement / 需求和依赖</h2><h3 id="Basic-基本需求"><a href="#Basic-基本需求" class="headerlink" title="Basic / 基本需求"></a>Basic / 基本需求</h3><ul>
+<li>A macOS machine (optional): to create the macOS installer and build the EFI.<br>一台已经安装好 macOS 的机器，用于制作 macOS 安装器和编译本项目</li>
+<li>Flash drive, 12GB or more, for the above purpose.<br>一个容量大于等于 12 GiB 的 U 盘</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ic005k/PlistEDPlus">PlistEDPlus</a> to edit plist files on Windows.<br>编辑 plist 文件的工具 <a target="_blank" rel="noopener" href="https://github.com/ic005k/PlistEDPlus">PlistEDPlus</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/acidanthera/MaciASL">MaciASL</a> for patching ACPI tables and editing ACPI patches.<br>用于修补和编辑 ACPI 的工具 <a target="_blank" rel="noopener" href="https://github.com/acidanthera/MaciASL">MaciASL</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/corpnewt/MountEFI">MountEFI</a> to quickly mount EFI partitions under macOS.<br>在 macOS 下挂载 EFI 分区的工具 <a target="_blank" rel="noopener" href="https://github.com/corpnewt/MountEFI">MountEFI</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.apple.com/downloads">IORegistryExplorer</a> for diagnosis.<br>用于诊断的 <a target="_blank" rel="noopener" href="https://developer.apple.com/downloads">IORegistryExplorer</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/headkaze/Hackintool">HackinTool</a> for diagnosis ONLY. Most of the built-in patches are outdated.</li>
+</ul>
+<p><strong>仅用于</strong> 诊断的 <a target="_blank" rel="noopener" href="https://github.com/headkaze/Hackintool">HackinTool</a>，大部分内置的补丁和工具已经过时、不再适用</p>
 <ul>
-<li>SETTINGS -&gt; 高级 -&gt; 集成显卡多显示器: 允许</li>
-<li>SETTINGS -&gt; 高级 -&gt; ErP Ready: 允许</li>
-<li>SETTINGS -&gt; 高级 -&gt; Windows操作系统的配置 -&gt; 安全引导 -&gt; MSI 快速开机: 关闭</li>
-<li>SETTINGS -&gt; 高级 -&gt; Windows操作系统的配置 -&gt; 安全引导 -&gt; 快速开机: 关闭</li>
-<li>SETTINGS -&gt; 高级 -&gt; Windows操作系统的配置 -&gt; 安全引导 -&gt; 安全启动: 关闭</li>
-<li>SETTINGS -&gt; 高级 -&gt; 唤醒事件设置 -&gt; USB设备从S3/S4/S5唤醒: 允许</li>
-<li>OC -&gt; CPU特征 -&gt; CFG锁定: 禁止</li>
-<li>SETTINGS -&gt; 启动 -&gt; 启动模式选择: UEFI</li>
-<li>安装替换引导到硬盘之后<ul>
-<li>SETTINGS -&gt; 启动 -&gt; UEFI硬盘BBS优先权 -&gt; 启动选项#1 -&gt; 选择你Mac启动项为首位</li>
+<li>Patience and time, especially if this is your first time Hackintosh-ing.<br>耐心和时间。如果你是第一次进行黑苹果，这尤为重要</li>
 </ul>
-</li>
+<h3 id="Hardware-Modification-硬件修改"><a href="#Hardware-Modification-硬件修改" class="headerlink" title="Hardware Modification / 硬件修改"></a>Hardware Modification / 硬件修改</h3><h4 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h4><p>Samusung PM981 is not supported AT ALL. Make sure to switch at least one SSD.</p>
+<p>三星 PM981 <strong>完全</strong> 无法使用，务必更换至少一块 SSD 硬盘。</p>
+<h4 id="Wireless-Card-无线网卡"><a href="#Wireless-Card-无线网卡" class="headerlink" title="Wireless Card / 无线网卡"></a>Wireless Card / 无线网卡</h4><p>it is recommended to use Broadcom wireless network card for the best experience (better, refer to the use of the best experience).</p>
+<p>建议使用博通无线网卡以获得 <strong>更好</strong> 的体验（更好，指使用 <strong>体验</strong>）。</p>
+<h3 id="Update-or-Downgrade-BIOS-Version-升级或降级-BIOS"><a href="#Update-or-Downgrade-BIOS-Version-升级或降级-BIOS" class="headerlink" title="Update or Downgrade BIOS Version / 升级或降级 BIOS"></a>Update or Downgrade BIOS Version / 升级或降级 BIOS</h3><p>It is recommended to use a specific version of the BIOS for the best use experience. The most recommended BIOS version is E7B23IMS.1B0</p>
+<p>推荐使用特定版本的 BIOS 以获得最佳的使用体验。最推荐 BIOS 版本是 E7B23IMS.1B0</p>
+<p><a target="_blank" rel="noopener" href="https://www.msi.com/Motherboard/support/B360M-MORTAR">Download BIOS at MSI Support Website. 从微星支持网站下载 BIOS。</a></p>
+<h3 id="BIOS-Settings-修改-BIOS-设置"><a href="#BIOS-Settings-修改-BIOS-设置" class="headerlink" title="BIOS Settings / 修改 BIOS 设置"></a>BIOS Settings / 修改 BIOS 设置</h3><ul>
+<li>Settings &gt; Advanced &gt; integrated graphics card multi display: allow</li>
+<li>Settings &gt; Advanced &gt; ERP ready: allow</li>
+<li>Settings &gt; Advanced &gt; Windows operating system configuration &gt; secure boot &gt; MSI quick boot: off</li>
+<li>Settings &gt; Advanced &gt; Windows operating system configuration &gt; secure boot &gt; fast boot: off</li>
+<li>Settings &gt; Advanced &gt; Windows operating system configuration &gt; secure boot &gt; secure boot: off</li>
+<li>Settings &gt; Advanced &gt; wake up event Settings &gt; USB device wake up from S3 / S4 / S5: allow</li>
+<li>OC &gt; CPU features &gt; CFG lock: Disable</li>
 </ul>
-</li>
-<li><p>使用 <a target="_blank" rel="noopener" href="https://github.com/corpnewt/GenSMBIOS">GenSMBIOS</a>生成 MLB SystemSerialNumber</p>
-</li>
-<li><p>SystemUUID请在Win获取 在命令提示符下输入wmic 再输入csproduct 或 csproduct list full</p>
-</li>
-<li><p>默认的config.plist文件只有IGPU</p>
-</li>
-<li><p>有IGPU+AMD GPU要求，请删除默认配置文件并将配置config_AMD+IGPU.iMac19.1.plist 重命名为config.plist</p>
-</li>
-<li><p>没有IGPU 但是有AMD GPU，请删除默认配置文件并将配置config_ONLY.AMD.GPU.iMacPro1.1.plist重命名为config.plist</p>
-</li>
-</ul>
-<p>使用以下命令来构建EFI</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/TokiharaSay/MSI-B360M-MORTAR-Hackintosh<br><span class="hljs-built_in">cd</span> MSI-B360M-MORTAR-Hackintosh/Auto<br>chmod +x **/*.sh<br>./build.sh<br></code></pre></td></tr></table></figure>
-<p>你可以在 <code>Output</code> 目录下找到生成的 EFI。OpenCore 配置文件路径为 <code>Output/EFI/OC/config_sample.plist</code>，你需要自行生成 SMBIOS 信息（遵循 <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html">这篇教程</a> 的步骤，使用 <code>你需要的机型</code>）并填入配置文件中，然后将 <code>config_sample.plist</code> 重命名为 <code>config.plist</code>。</p>
-<ul>
-<li><p>默认的config_sample.plist文件只有IGPU</p>
-</li>
-<li><p>有IGPU+AMD GPU要求，请删除默认配置文件并将配置config_AMD+IGPU.iMac19.1.plist 重命名为config.plist</p>
-</li>
-<li><p>没有IGPU 但是有AMD GPU，请删除默认配置文件并将配置config_ONLY.AMD.GPU.iMacPro1.1.plist重命名为config.plist</p>
-</li>
-</ul>
-<h3 id="感谢以下朋友的帮助"><a href="#感谢以下朋友的帮助" class="headerlink" title="感谢以下朋友的帮助"></a>感谢以下朋友的帮助</h3><ul>
-<li><p>OC技术交流群 百科哞</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/SukkaW">SukkaW</a></p>
-</li>
-</ul>
+<h2 id="Other-Information-其它信息"><a href="#Other-Information-其它信息" class="headerlink" title="Other Information / 其它信息"></a>Other Information / 其它信息</h2><h3 id="How-to-build-EFI-如何编译本-EFI"><a href="#How-to-build-EFI-如何编译本-EFI" class="headerlink" title="How to build EFI / 如何编译本 EFI"></a>How to build EFI / 如何编译本 EFI</h3><p>There is no prebuilt version of EFI avaliable YET, and it is only able to build under macOS. Use a virtual machine or <a target="_blank" rel="noopener" href="https://github.com/mxschmitt/action-tmate">action-tmate</a> if you have to.</p>
+<p>本 EFI <strong>暂时不提供</strong> 预编译版本，并且编译必须在 macOS 下进行。如有必要，请使用虚拟机、或通过 <a target="_blank" rel="noopener" href="https://github.com/mxschmitt/action-tmate">action-tmate</a> 将 GitHub Action 作为 macOS VPS 使用。</p>
+<p>Use following command to build the EFI.</p>
+<p>使用下述指令编译 EFI：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git https://github.com/TokiharaSay/OpenCore-MSI-B360M-MORTAR-Hackintosh<br><span class="hljs-built_in">cd</span> OpenCore-MSI-B360M-MORTAR-Hackintosh<br>chmod +x **/*.sh<br>./build.sh<br></code></pre></td></tr></table></figure>
+
+<p>Find generated EFI under <code>Output</code> folder. Find OpenCore config at <code>Output/EFI/OC/config_sample.plist</code> and fill in your own SMBIOS (Follow <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html">the guide</a>, use model <code>MacBookPro14,3</code>) then rename <code>config_sample.plist</code> to <code>config.plist</code>.</p>
+<p>你可以在 <code>Output</code> 目录下找到生成的 EFI。OpenCore 配置文件路径为 <code>Output/EFI/OC/config_sample.plist</code>，你需要自行生成 SMBIOS 信息（遵循 <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html">这篇教程</a> 的步骤，使用机型 <code>Macmini8,1</code>）并填入配置文件中，然后将 <code>config_sample.plist</code> 重命名为 <code>config.plist</code>。</p>
+<hr>
+<p>Use following command to update and rebuild the EFI from upstream.</p>
+<p>使用下述指令从上游更新和重新编译 EFI：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> OpenCore-MSI-B360M-MORTAR-Hackintosh<br>git pull --rebase<br>chmod +x **/*.sh<br>./build.sh<br></code></pre></td></tr></table></figure>
+
+<p>Everytime you rebuilt the EFI you have to fill in the SMBIOS again. So keep your SMBIOS info saved in a safe place!</p>
+<p>每次重新编译 EFI 后你都需要重新填入一次 SMBIOS 信息，所以务必将你的 SMBIOS 信息保存在一个安全的位置！</p>
+<h3 id="Directories-Structure-项目目录结构"><a href="#Directories-Structure-项目目录结构" class="headerlink" title="Directories Structure / 项目目录结构"></a>Directories Structure / 项目目录结构</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">.<br>├── ACPI<br>│   ├── OEM_DSDT <span class="hljs-comment"># The original DSDT dissembled from OEM BIOS</span><br>│   └── SSDT<br>│       ├── DSL <span class="hljs-comment"># SSDT source dsl files</span><br>│       └── <span class="hljs-keyword">build_acpi.sh </span><span class="hljs-comment"># dsl files build script</span><br>├── <span class="hljs-built_in">Config</span><br>│   └── config_sample.plist <span class="hljs-comment"># Sample config.plist</span><br>├── Kexts<br>│   ├── Local <span class="hljs-comment"># Kexts files where there is no way to be downloaded</span><br>│   │   ├── ThunderboltReset.kext<br>│   │   ├── USBMap.kext<br>│   │   └── XHCI-unsupported.kext<br>│   └── download_kexts.<span class="hljs-keyword">sh </span><span class="hljs-comment"># Use the script to download the rest of the kexts</span><br>├── LICENSE<br>├── OpenCore<br>│   ├── OldSample.plist <span class="hljs-comment"># The curent version of OpenCore sample. Used to diff the configuration when update OpenCore to a newer version </span><br>│   └── oc.<span class="hljs-keyword">sh </span><span class="hljs-comment"># Script uesd to download OpenCorePkg and construct EFI folder</span><br>├── README.md <span class="hljs-comment"># The file you are currently reading</span><br>└── <span class="hljs-keyword">build.sh </span><span class="hljs-comment"># Overall build script, will call all the scripts mentioned above.</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Donation-捐赠"><a href="#Donation-捐赠" class="headerlink" title="Donation / 捐赠"></a>Donation / 捐赠</h2><p>Donating to this project is OPTIONAL. But feel free to buy me a coffee if you appreciate my works.</p>
+<p>捐赠本项目 <strong>并不是必需的</strong>。但是如果我的项目对你有所帮助，为什么不考虑一下给我买杯咖啡呢？</p>
+<h2 id="Maintainer-维护者"><a href="#Maintainer-维护者" class="headerlink" title="Maintainer / 维护者"></a>Maintainer / 维护者</h2><p><strong>OMEN-by-HP-3 Hackintosh</strong> © <a target="_blank" rel="noopener" href="https://github.com/TokiharaSay">TokiharaSay</a>, Released under the <a href="./LICENSE">GPL-3.0</a> License.<br><br>Authored and maintained by TokiharaSaywith help from contributors (<a target="_blank" rel="noopener" href="https://github.com/TokiharaSay/OpenCore-MSI-B360M-MORTAR-Hackintosh/graphs/contributors">list</a>).</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.runebalot.cn/">Blog</a> · GitHub <a target="_blank" rel="noopener" href="https://github.com/TokiharaSay">@TokiharaSay</a> · Telegram Channel <a target="_blank" rel="noopener" href="https://t.me/TokiharaSay">@TokiharaSayChannel</a> · Twitter <a target="_blank" rel="noopener" href="https://twitter.com/TokiharaSay">@TokiharaSay</a> </p>
+</blockquote>
 
             </div>
             <hr>
@@ -380,15 +492,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/01/Hackintosh_1/">
+                      <a href="/2021/03/13/Hackintosh_3/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">记一次OMEN-by-HP-3黑苹果完善程度</span>
+                        <span class="hidden-mobile">Facetime与iMessage解决方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/03/01/Hackintosh_1/">
+                        <span class="hidden-mobile">OMEN-by-HP-3 黑苹果 OpenCore 引导配置</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
