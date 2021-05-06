@@ -14,7 +14,15 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="
+
+
+
+OMEN-by-HP-3 Hackintosh
+OMEN-by-HP-3 黑苹果 OpenCore 引导配置
+
+
+Disclaimer / 免责声明">
   <meta name="author" content="常原">
   <meta name="keywords" content="">
   
@@ -229,7 +237,7 @@
             
               <p class="note note-info">
                 
-                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年5月7日 凌晨
+                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年5月7日 早上
                 
               </p>
             
@@ -242,7 +250,9 @@
 <h3 align="center">OMEN-by-HP-3 黑苹果 OpenCore 引导配置</h3>
 <br>
 
-<h2 id="Disclaimer-免责声明"><a href="#Disclaimer-免责声明" class="headerlink" title="Disclaimer / 免责声明"></a>Disclaimer / 免责声明</h2><p>Your warranty is now void. Please do some research if you have any concerns before utilizing my project. I am not responsible for any loss, including but not limited to Kernel Panic, device fail to boot or can not function normally, storage damage or data loss, atomic bombing, World War III, The CK-Class Restructuring Scenario that SCP Foundation can not prevent, and so on.</p>
+<h2 id="Disclaimer-免责声明"><a href="#Disclaimer-免责声明" class="headerlink" title="Disclaimer / 免责声明"></a>Disclaimer / 免责声明</h2><span id="more"></span>
+
+<p>Your warranty is now void. Please do some research if you have any concerns before utilizing my project. I am not responsible for any loss, including but not limited to Kernel Panic, device fail to boot or can not function normally, storage damage or data loss, atomic bombing, World War III, The CK-Class Restructuring Scenario that SCP Foundation can not prevent, and so on.</p>
 <p>你的保修将完全失效。如果您有任何疑虑，请在使用我的项目之前先进行一些研究。我对任何损失均不负责，包括但不限于 Kernel Panic、设备无法启动或无法正常工作、硬件损坏或数据丢失、原子弹爆炸、第三次世界大战、SCP 基金会无法避免的 CK 级现实重构等。</p>
 <h2 id="Hardware-Specifications-硬件配置"><a href="#Hardware-Specifications-硬件配置" class="headerlink" title="Hardware Specifications / 硬件配置"></a>Hardware Specifications / 硬件配置</h2><table>
 <thead>
@@ -475,7 +485,7 @@
 <p>本 EFI <strong>暂时不提供</strong> 预编译版本，并且编译必须在 macOS 下进行。如有必要，请使用虚拟机、或通过 <a target="_blank" rel="noopener" href="https://github.com/mxschmitt/action-tmate">action-tmate</a> 将 GitHub Action 作为 macOS VPS 使用。</p>
 <p>Use following command to build the EFI.</p>
 <p>使用下述指令编译 EFI：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git https://github.com/TokiharaSay/OpenCore-OMEN-by-HP-3-Hackintosh<br><span class="hljs-built_in">cd</span> OpenCore-OMEN-by-HP-3-Hackintosh<br>chmod +x **/*.sh<br>./build.sh<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/TokiharaSay/OpenCore-OMEN-by-HP-3-Hackintosh<br><span class="hljs-built_in">cd</span> OpenCore-OMEN-by-HP-3-Hackintosh<br>chmod +x **/*.sh<br>./build.sh<br></code></pre></td></tr></table></figure>
 
 <p>Find generated EFI under <code>Output</code> folder. Find OpenCore config at <code>Output/EFI/OC/config_sample.plist</code> and fill in your own SMBIOS (Follow <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html">the guide</a>, use model <code>MacBookPro14,3</code>) then rename <code>config_sample.plist</code> to <code>config.plist</code>.</p>
 <p>你可以在 <code>Output</code> 目录下找到生成的 EFI。OpenCore 配置文件路径为 <code>Output/EFI/OC/config_sample.plist</code>，你需要自行生成 SMBIOS 信息（遵循 <a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html">这篇教程</a> 的步骤，使用机型 <code>MacBookPro14,3</code>）并填入配置文件中，然后将 <code>config_sample.plist</code> 重命名为 <code>config.plist</code>。</p>
