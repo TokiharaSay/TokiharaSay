@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      763 字
+      751 字
     </span>
   
 
@@ -229,7 +229,7 @@
             
               <p class="note note-info">
                 
-                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年5月6日 上午
+                  技术更新换代快，温馨提示，请注意文章的更新时间。<br />本文最后更新于：2021年5月7日 凌晨
                 
               </p>
             
@@ -265,22 +265,17 @@
 </ul>
 <h3 id="实用命令"><a href="#实用命令" class="headerlink" title="实用命令"></a>实用命令</h3><p>终端</p>
 <ul>
-<li><p>log show –last 1d | grep “AppleACPIPlatformPower” 查看睡眠唤醒日志</p>
-</li>
-<li><p>sudo spctl –-master-disable 允许任何未知来源 (master前面是两个-,MD渲染的博客只显一个)</p>
-</li>
+<li><p>查看睡眠唤醒日志</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs maxima"><span class="hljs-built_in">log</span> <span class="hljs-built_in">show</span> --<span class="hljs-built_in">last</span> 1d | grep <span class="hljs-string">&quot;AppleACPIPlatformPower&quot;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>允许任何未知来源</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sudo spctl <span class="hljs-comment">--master-disable</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>系统路径</p>
 <ul>
-<li>/System/Library/Extensions</li>
-<li>/Library/Extensions</li>
+<li>SLE<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/System/</span>Library/Extensions<br></code></pre></td></tr></table></figure></li>
+<li>LE<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/Library/</span>Extensions<br></code></pre></td></tr></table></figure></li>
 </ul>
-<p>重建缓存</p>
-<ul>
-<li>sudo kextcache -i /</li>
-<li>sudo kextcache -u /</li>
-<li>sudo kextcache -system-caches</li>
-</ul>
+<p>重建缓存<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo kextcache -<span class="hljs-selector-tag">i</span> /<br></code></pre></td></tr></table></figure><br>    <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sudo</span> kextcache -u /<br></code></pre></td></tr></table></figure><br>    <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clean">sudo kextcache -<span class="hljs-keyword">system</span>-caches<br></code></pre></td></tr></table></figure></p>
 <h3 id="Boot-Args"><a href="#Boot-Args" class="headerlink" title="Boot-Args"></a><a href="#Boot-Args" title="Boot-Args"></a>Boot-Args</h3><ul>
 <li>agdpmod=vit9696 HDMI 开机黑屏</li>
 <li>igfxonln=1 HDMI 唤醒黑屏</li>
@@ -294,9 +289,9 @@
 <li>Catalina及以下不识别SATA盘添加SATA-100-series-unsupported SATA-200-series-unsupported SATA-300-series-unsupported<br>三个驱动（如果是OC 同时请在config.plist里面的Kext-add下面添加该驱动列表）</li>
 </ul>
 <h3 id="OC选项"><a href="#OC选项" class="headerlink" title="OC选项"></a><a href="#OC%E9%80%89%E9%A1%B9" title="OC选项"></a>OC选项</h3><p>查看当前OC版本 终端输入</p>
-<ul>
-<li>nvram 4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102:opencore-version</li>
-</ul>
+  <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nvram</span> <span class="hljs-number">4</span>D<span class="hljs-number">1</span>FDA<span class="hljs-number">02</span>-<span class="hljs-number">38</span>C<span class="hljs-number">7</span>-<span class="hljs-number">4</span>A<span class="hljs-number">6</span>A-<span class="hljs-number">9</span>CC<span class="hljs-number">6</span>-<span class="hljs-number">4</span>BCCA<span class="hljs-number">8</span>B<span class="hljs-number">30102</span>:opencore-version<br></code></pre></td></tr></table></figure>
+
+
 <p>让Win不使用Mac的SMBIOS</p>
 <ul>
 <li>CustomSMBIOSGuid 改成 true （其实是打勾或者选Yes）</li>
@@ -317,18 +312,18 @@
 <p>方法二</p>
 <ul>
 <li>Kernel-Force-Item 1</li>
-<li>BundlePath 填 System/Library/Extensions/IO80211Family.kext</li>
+<li>BundlePath 填   <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">System<span class="hljs-regexp">/Library/</span>Extensions/IO80211Family.kext<br></code></pre></td></tr></table></figure></li>
 <li>Enabled 改成 true （其实是打勾或者选Yes）</li>
-<li>ExecutablePath 填 Contents/MacOS/IO80211Family</li>
+<li>ExecutablePath 填 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">Contents<span class="hljs-regexp">/MacOS/</span>IO80211Family<br></code></pre></td></tr></table></figure></li>
 <li>MaxKernel 为空</li>
 <li>MinKernel 为空</li>
-<li>Identifier 填 com.apple.iokit.IO80211Family</li>
+<li>Identifier 填 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus">com<span class="hljs-selector-class">.apple</span><span class="hljs-selector-class">.iokit</span>.IO80211Family<br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>核显改为4095MB</p>
 <ul>
 <li>DeviceProperties-Add</li>
 <li>PciRoot(0x0)/Pci(0x2,0x0)下添加</li>
-<li>framebuffer-unifiedmem data 0000F0FF</li>
+<li><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">framebuffer</span>-unifiedmem data <span class="hljs-number">0000</span>F<span class="hljs-number">0</span>FF<br></code></pre></td></tr></table></figure></li>
 </ul>
 
             </div>
